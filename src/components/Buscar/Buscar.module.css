@@ -1,0 +1,103 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  span {
+    font-size: var(--subtitle);
+    font-family: var(--font-body-family);
+    margin: 0 1rem;
+  }
+}
+.firstForm,
+.secondForm {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.secondForm {
+  margin: 1rem 2rem 0 2rem;
+  span {
+    min-width: 12rem;
+    width: 12rem;
+    font-size: var(--details);
+    text-align: end;
+  }
+  .input_container {
+    width: 100%;
+    max-width: 22.4rem;
+    display: flex;
+    height: 3.3rem;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: var(--yellow);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    input {
+      width: 90%;
+      height: 100%;
+      font-size: var(--body-text);
+      /* background-color: aliceblue; */
+    }
+    input:focus {
+      outline: none;
+    }
+  }
+  .input_container:focus-within {
+    border: 2px solid var(--black);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+.listbox {
+  height: 3rem;
+  width: 20rem;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-bottom: 3px solid var(--black);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.container_listbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.textListbox {
+  font-size: var(--smallest) !important;
+}
+
+.optionListbox {
+  height: 2rem;
+  border: 1px solid var(--black);
+  width: 20rem;
+  background-color: var(--yellow);
+}
+
+.hide {
+  display: none;
+}

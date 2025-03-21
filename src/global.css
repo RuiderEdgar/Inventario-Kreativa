@@ -1,68 +1,71 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@import "tailwindcss";
+
+@font-face {
+  font-family: Questrial;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/questrial_n4.0ba6d2b6094954bab23732c75d3ecb4c47a5869c.woff2")
+    format("woff2");
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@font-face {
+  font-family: Archivo;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/archivo_n7.6f363ab30b12ea00d5e6243ed0e977a11393a3ad.woff2")
+    format("woff2");
 }
 
-body {
+.archivo {
+  font-family: "Archivo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
   min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+:root {
+  /* Variables */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  /* Font family */
+  --font-body-family: "Questrial", sans-serif;
+  --font-heading-family: "Archivo", serif;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  /* Font size */
+
+  --smallest: 1.2rem;
+  --details: 1.3rem;
+  /*up to 1.4 or 14px*/
+
+  --body-text: 1.6rem;
+  /*up to 1.8 or 18px*/
+
+  --subtitle: 1.8rem;
+  /*up to 2.0*/
+
+  --title: 2.4rem;
+  /*up to 2.8*/
+
+  --header: 3.2rem;
+  /*up to 3.8*/
+
+  /* Colores */
+
+  --yellow: #ffc629;
+  --black: #000;
+  --white: #fff;
 }
