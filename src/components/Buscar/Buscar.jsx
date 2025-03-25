@@ -31,17 +31,17 @@ export const Buscar = ({data, setFilteredData}) => {
   //Aplicando los filtros
   useEffect(() => {
       filteredByCadena(data, filterByCadena, setFilteredData)
-  }, [filterByCadena])
+  }, [data, filterByCadena, setFilteredData])
 
   useEffect(() => {
       filteredByTienda(data, filterByTienda, setFilteredData)
-  }, [filterByTienda])
+  }, [data, filterByTienda, setFilteredData])
 
   return (
     <div className={s.container}>
       {/* //Listbox */}
       <div className={s.firstForm}>
-        <span>Buscar por: </span>
+        <span className={s.spanForm}>Buscar por: </span>
         <Listbox value={selected} onChange={setSelected}>
           <ListboxButton className={s.listbox}>
             <div className={s.container_listbox}>

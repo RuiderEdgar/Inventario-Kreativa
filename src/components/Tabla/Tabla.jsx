@@ -29,7 +29,7 @@ export const Tabla = ({ data }) => {
                 <td>{registro.articulo}</td>
                 <td className={s.upc}>{registro.upc}</td>
                 <td className={s.piezas}>{registro.suma_oh_piezas}</td>
-                <td>{registro.transito}</td>
+                <td className={s.transito}>{registro.transito}</td>
               </tr>
             );
           })}
