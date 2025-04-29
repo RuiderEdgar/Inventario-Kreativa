@@ -1,29 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header } from './ui'
 import { Buscar, Tabla } from './components'
-import { inventarios } from './data/fakeData'
+import { getDatos } from './data/dataInventarios'
 import './InventariosApp.css'
-import { fetchData } from './data/drive.js'
 
 
 function App() {
-  const [filteredData, setFilteredData] = useState(inventarios);
-  async function getData() {
-    try{
-      const data = await fetchData()
-      console.log(data)
-    } catch(e){
-      console.log(e)
+  
+  const [dataInventarios, setDataInventarios] = useState([])
+  // const [filteredData, setFilteredData] = useState(inventarios);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getDatos();
+      if (data) {
+        const parsedData = Object.values(data);
+        setDataInventarios(parsedData);
+      }
     }
-  }
-  getData()
-  //implementar funcion asincrona para hacer el fetch de los datos
 
+    fetchData();
+  }, [])
+  
   return (
     <>
       <Header />
-      <Buscar setFilteredData={ setFilteredData } data={inventarios} />
-      <Tabla data={ filteredData } />
+      {/* <Buscar setFilteredData={ setFilteredData } data={inventarios} /> */}
+      <Tabla data={dataInventarios} />
     </>
   )
 }

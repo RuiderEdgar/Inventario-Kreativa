@@ -13,3 +13,12 @@
     font-family: var(--font-heading-family);
   }
 }
+@media (max-width: 320px) {
+  .header_container {
+    h1 {
+      margin: auto;
+      font-size: 2.9rem;
+      font-family: var(--font-heading-family);
+    }
+  }
+}
