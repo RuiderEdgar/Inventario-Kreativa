@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Header } from './ui'
-import { Buscar, Tabla } from './components'
+import { useEffect, useState, Suspense, lazy } from 'react'
+import { Header, TablaSkeleton } from './ui'
+const Tabla = lazy(() => import("./components/Tabla/Tabla.jsx"));
 import { getDatos } from './data/dataInventarios'
 import './InventariosApp.css'
 
@@ -8,7 +8,6 @@ import './InventariosApp.css'
 function App() {
   
   const [dataInventarios, setDataInventarios] = useState([])
-  // const [filteredData, setFilteredData] = useState(inventarios);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -25,10 +24,11 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Buscar setFilteredData={ setFilteredData } data={inventarios} /> */}
-      <Tabla data={dataInventarios} />
+      <Suspense fallback={<TablaSkeleton/>}>
+        <Tabla data={dataInventarios} />
+      </Suspense>
     </>
-  )
+  );
 }
 
 export default App

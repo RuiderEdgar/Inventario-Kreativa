@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
-import { filteredByCadena, filteredByTienda } from "../../helpers";
 import s from './Buscar.module.css'
 
-export const Buscar = ({data, setFilteredData}) => {
+export const Buscar = () => {
   const filters = ["Cadena", "Tienda"];
   const [selected, setSelected] = useState("-Seleccione una opción-");
   const [filterByCadena, setFilterByCadena] = useState("");
@@ -28,14 +27,6 @@ export const Buscar = ({data, setFilteredData}) => {
     
   }, [selected])
   
-  //Aplicando los filtros
-  useEffect(() => {
-      filteredByCadena(data, filterByCadena, setFilteredData)
-  }, [data, filterByCadena, setFilteredData])
-
-  useEffect(() => {
-      filteredByTienda(data, filterByTienda, setFilteredData)
-  }, [data, filterByTienda, setFilteredData])
 
   return (
     <div className={s.container}>

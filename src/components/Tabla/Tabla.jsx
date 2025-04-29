@@ -3,7 +3,7 @@ import { columns } from '../../helpers/columns';
 import s from './Tabla.module.css'
 import { useState } from 'react';
 
-export const Tabla = ({ data }) => { 
+const Tabla = ({ data }) => { 
   const [columnFilters, setColumnFilters] = useState([]);
   
   const tableInventarios = useReactTable({
@@ -174,3 +174,5 @@ export const Tabla = ({ data }) => {
     </main>
   );
 }
+
+export default Tabla;
