@@ -9,7 +9,7 @@ export const columns = [
     cell: (info) => info.getValue(),
   },
   {
-    accessorKey: "NomTienda",
+    accessorKey: "Nombre Tienda",
     header: "Nombre Tienda",
     cell: (info) => info.getValue(),
   },
@@ -19,7 +19,7 @@ export const columns = [
     cell: (info) => info.getValue(),
   },
   {
-    accessorKey: "Descripcion",
+    accessorKey: "Articulo",
     header: "Articulo",
   },
   {
@@ -27,15 +27,15 @@ export const columns = [
     header: "UPC",
   },
   {
-    accessorKey: "OH Piezas",
-    header: "Suma OH Piezas",
+    accessorKey: "Inventario",
+    header: "Inventario",
   },
   {
-    accessorKey: "IT Piezas",
+    accessorKey: "Transito",
     header: "Tránsito",
   },
   {
-    accessorKey: "Tiempo",
+    accessorKey: "Fecha",
     header: "Fecha",
   },
 ];
