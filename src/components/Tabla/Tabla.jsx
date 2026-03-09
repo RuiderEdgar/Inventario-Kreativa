@@ -1,11 +1,17 @@
-import { useReactTable, getCoreRowModel, flexRender, getPaginationRowModel, getFilteredRowModel } from '@tanstack/react-table';
-import { columns } from '../../helpers/columns';
-import s from './Tabla.module.css'
-import { useState } from 'react';
+import {
+  useReactTable,
+  getCoreRowModel,
+  flexRender,
+  getPaginationRowModel,
+  getFilteredRowModel,
+} from "@tanstack/react-table";
+import { columns } from "../../helpers/columns";
+import s from "./Tabla.module.css";
+import { useState } from "react";
 
-const Tabla = ({ data }) => { 
+const Tabla = ({ data }) => {
   const [columnFilters, setColumnFilters] = useState([]);
-  
+
   const tableInventarios = useReactTable({
     data,
     columns,
@@ -19,11 +25,11 @@ const Tabla = ({ data }) => {
     state: {
       columnFilters,
     },
-    onColumnFiltersChange: setColumnFilters
+    onColumnFiltersChange: setColumnFilters,
   });
 
   const limpiarFiltros = () => {
-    tableInventarios.resetColumnFilters(); 
+    tableInventarios.resetColumnFilters();
   };
 
   return (
@@ -66,11 +72,12 @@ const Tabla = ({ data }) => {
               className={s.input}
               placeholder="Filtrar por Tienda"
               value={
-                tableInventarios.getColumn("NomTienda")?.getFilterValue() ?? ""
+                tableInventarios.getColumn("Nombre Tienda")?.getFilterValue() ??
+                ""
               }
               onChange={(e) =>
                 tableInventarios
-                  .getColumn("NomTienda")
+                  .getColumn("Nombre Tienda")
                   ?.setFilterValue(e.target.value.trimStart())
               }
             />
@@ -117,7 +124,9 @@ const Tabla = ({ data }) => {
         </div>
       </section>
 
-      <button className={s.cleanButton} onClick={() => limpiarFiltros()}>Limpiar filtros</button>
+      <button className={s.cleanButton} onClick={() => limpiarFiltros()}>
+        Limpiar filtros
+      </button>
 
       <section className={s.tableWrapper}>
         <table>
@@ -133,7 +142,7 @@ const Tabla = ({ data }) => {
                   <th key={header.id}>
                     {flexRender(
                       header.column.columnDef.header,
-                      header.getContext()
+                      header.getContext(),
                     )}
                   </th>
                 ))}
@@ -173,6 +182,6 @@ const Tabla = ({ data }) => {
       </div>
     </main>
   );
-}
+};
 
 export default Tabla;
